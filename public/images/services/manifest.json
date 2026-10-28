@@ -1,0 +1,704 @@
+{
+  "source": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+  "galleryCounts": {
+    "24h": 6,
+    "7dias": 7
+  },
+  "notes": [
+    "Se respetan los 13 recursos exactos y el orden de las dos galerías originales.",
+    "Se eliminaron únicamente las columnas laterales totalmente blancas de 7 fuentes; cada recorte y las dimensiones originales están documentados. No se recortó contenido fotográfico.",
+    "Las variantes respetan la proporción y nunca amplían el tamaño útil de la fuente; nombres y descriptores srcset indican anchos físicos reales.",
+    "Las leyendas describen lo visible; no atribuyen identidades, especialidades ni diagnósticos."
+  ],
+  "assets": [
+    {
+      "id": "service-gallery-01",
+      "src": "/images/services/service-01-960.webp",
+      "srcset": "/images/services/service-01-480.webp 480w, /images/services/service-01-960.webp 960w, /images/services/service-01-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Tres integrantes del equipo acompañan una atención veterinaria junto a una mesa clínica.",
+      "caption": "El equipo durante una atención veterinaria.",
+      "group": "24h",
+      "sourceOrder": 1,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/1.png",
+      "wordpressMediaId": 23813599,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "8fb5a1d906f1b9b589144e2806277e690fb917fc5a950314d82c20aefb60cfde",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-01-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18118
+        },
+        {
+          "file": "/images/services/service-01-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 44424
+        },
+        {
+          "file": "/images/services/service-01-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 85480
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-02",
+      "src": "/images/services/service-02-960.webp",
+      "srcset": "/images/services/service-02-480.webp 480w, /images/services/service-02-960.webp 960w, /images/services/service-02-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Dos integrantes del equipo junto a equipos de atención del hospital.",
+      "caption": "Personas y equipos al servicio del cuidado.",
+      "group": "24h",
+      "sourceOrder": 2,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/2.png",
+      "wordpressMediaId": 23813600,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "f98de4e1730cee80bf46b7146c4ff0b6bb87129d5542f87248cd585f3f2cb318",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-02-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 15076
+        },
+        {
+          "file": "/images/services/service-02-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 38098
+        },
+        {
+          "file": "/images/services/service-02-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 72584
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-03",
+      "src": "/images/services/service-03-960.webp",
+      "srcset": "/images/services/service-03-480.webp 480w, /images/services/service-03-960.webp 960w, /images/services/service-03-1600.webp 1600w",
+      "width": 960,
+      "height": 816,
+      "alt": "Revisión de un gato con acompañamiento de dos integrantes del equipo.",
+      "caption": "Acompañamiento durante la revisión de una mascota.",
+      "group": "24h",
+      "sourceOrder": 3,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/3.png",
+      "wordpressMediaId": 23813601,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "7af18bbee67e17b4ff645f9bd415aa4c9ad9ccdff7b2887a5c34d8ed3b139aec",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-03-480.webp",
+          "width": 480,
+          "height": 408,
+          "bytes": 22322
+        },
+        {
+          "file": "/images/services/service-03-960.webp",
+          "width": 960,
+          "height": 816,
+          "bytes": 55598
+        },
+        {
+          "file": "/images/services/service-03-1600.webp",
+          "width": 1600,
+          "height": 1360,
+          "bytes": 109184
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 221,
+        "right": 221,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1606,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-04",
+      "src": "/images/services/service-04-960.webp",
+      "srcset": "/images/services/service-04-480.webp 480w, /images/services/service-04-960.webp 960w, /images/services/service-04-1125.webp 1125w",
+      "width": 960,
+      "height": 1165,
+      "alt": "Perro de pelaje oscuro con una pañoleta de colores.",
+      "caption": "Una mascota en el hospital.",
+      "group": "24h",
+      "sourceOrder": 4,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/4.png",
+      "wordpressMediaId": 23813602,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "95ca7d35f2f60d650e3f45a8a696c48e3da1e82f601bd1f96d41276225556d4e",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-04-480.webp",
+          "width": 480,
+          "height": 582,
+          "bytes": 33166
+        },
+        {
+          "file": "/images/services/service-04-960.webp",
+          "width": 960,
+          "height": 1165,
+          "bytes": 85376
+        },
+        {
+          "file": "/images/services/service-04-1125.webp",
+          "width": 1125,
+          "height": 1365,
+          "bytes": 108254
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 462,
+        "right": 461,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1125,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-05",
+      "src": "/images/services/service-05-960.webp",
+      "srcset": "/images/services/service-05-480.webp 480w, /images/services/service-05-960.webp 960w, /images/services/service-05-1156.webp 1156w",
+      "width": 960,
+      "height": 1134,
+      "alt": "Integrante del equipo atiende a un perro sobre una mesa veterinaria.",
+      "caption": "Atención de una mascota en una mesa clínica.",
+      "group": "24h",
+      "sourceOrder": 5,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/5.png",
+      "wordpressMediaId": 23813603,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "108a9646aea78c15429e1fa0a5c2079f5b64dddf7a00a30e60c1c8248c135907",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-05-480.webp",
+          "width": 480,
+          "height": 567,
+          "bytes": 31870
+        },
+        {
+          "file": "/images/services/service-05-960.webp",
+          "width": 960,
+          "height": 1134,
+          "bytes": 90602
+        },
+        {
+          "file": "/images/services/service-05-1156.webp",
+          "width": 1156,
+          "height": 1365,
+          "bytes": 120680
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 446,
+        "right": 446,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1156,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-06",
+      "src": "/images/services/service-06-960.webp",
+      "srcset": "/images/services/service-06-480.webp 480w, /images/services/service-06-960.webp 960w, /images/services/service-06-1037.webp 1037w",
+      "width": 960,
+      "height": 1264,
+      "alt": "Integrante del equipo con guantes durante una atención veterinaria.",
+      "caption": "Cuidado durante un procedimiento veterinario.",
+      "group": "24h",
+      "sourceOrder": 6,
+      "sourceGalleryId": "dipi_image_gallery_0",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/6.png",
+      "wordpressMediaId": 23813604,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "d6d2888965a74a3f1932230a83f18608df771a256ab3b10c3a026bcc07687333",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-06-480.webp",
+          "width": 480,
+          "height": 632,
+          "bytes": 26496
+        },
+        {
+          "file": "/images/services/service-06-960.webp",
+          "width": 960,
+          "height": 1264,
+          "bytes": 69414
+        },
+        {
+          "file": "/images/services/service-06-1037.webp",
+          "width": 1037,
+          "height": 1365,
+          "bytes": 80334
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 505,
+        "right": 506,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1037,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-07",
+      "src": "/images/services/service-07-960.webp",
+      "srcset": "/images/services/service-07-480.webp 480w, /images/services/service-07-960.webp 960w, /images/services/service-07-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Cuatro integrantes del equipo junto a la marca del Hospital Veterinario de Santa Mónica.",
+      "caption": "Un equipo que trabaja por su bienestar.",
+      "group": "7dias",
+      "sourceOrder": 1,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/7.png",
+      "wordpressMediaId": 23813606,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "d3564bda42a6142ac4dabda8493b27aecf0404db40bb7cd8dda119fd75e0ea2a",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-07-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 20034
+        },
+        {
+          "file": "/images/services/service-07-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 49408
+        },
+        {
+          "file": "/images/services/service-07-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 94860
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-08",
+      "src": "/images/services/service-08-960.webp",
+      "srcset": "/images/services/service-08-480.webp 480w, /images/services/service-08-960.webp 960w, /images/services/service-08-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Integrantes del equipo acompañan una atención en una mesa del hospital.",
+      "caption": "Trabajo coordinado en la atención veterinaria.",
+      "group": "7dias",
+      "sourceOrder": 2,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/8.png",
+      "wordpressMediaId": 23813607,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "f14008d03466ebe199cd17e683ecdafc0e03347690b4713815b674f31651dda5",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-08-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18086
+        },
+        {
+          "file": "/images/services/service-08-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 46792
+        },
+        {
+          "file": "/images/services/service-08-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 94732
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-09",
+      "src": "/images/services/service-09-960.webp",
+      "srcset": "/images/services/service-09-480.webp 480w, /images/services/service-09-960.webp 960w, /images/services/service-09-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Integrante del hospital en un mostrador junto a productos veterinarios.",
+      "caption": "Un espacio de atención y productos veterinarios.",
+      "group": "7dias",
+      "sourceOrder": 3,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/9.png",
+      "wordpressMediaId": 23813608,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "d915858851893bb5f7b3f1f6721f3a1aa20546b5fbec9175a9a829ec9dad1661",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-09-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 36036
+        },
+        {
+          "file": "/images/services/service-09-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 94142
+        },
+        {
+          "file": "/images/services/service-09-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 174466
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-10",
+      "src": "/images/services/service-10-960.webp",
+      "srcset": "/images/services/service-10-480.webp 480w, /images/services/service-10-960.webp 960w, /images/services/service-10-1600.webp 1600w",
+      "width": 960,
+      "height": 640,
+      "alt": "Tres integrantes del equipo sostienen un perro blanco frente a la marca del hospital.",
+      "caption": "Equipo y mascotas en Santa Mónica.",
+      "group": "7dias",
+      "sourceOrder": 4,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/10.png",
+      "wordpressMediaId": 23813609,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "914e75bdc2f47e9cc8ecf1432cdeba92a3e4a2e3f6e9240c57652f11467472a7",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Conversión a WebP y reducción proporcional sin recorte, reencuadre, ampliación ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-10-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 16350
+        },
+        {
+          "file": "/images/services/service-10-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 40600
+        },
+        {
+          "file": "/images/services/service-10-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 80726
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 2048,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-11",
+      "src": "/images/services/service-11-960.webp",
+      "srcset": "/images/services/service-11-480.webp 480w, /images/services/service-11-960.webp 960w, /images/services/service-11-1179.webp 1179w",
+      "width": 960,
+      "height": 1111,
+      "alt": "Perro de pelaje blanco y café mirando hacia la cámara.",
+      "caption": "Una mascota de la galería original del hospital.",
+      "group": "7dias",
+      "sourceOrder": 5,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/11.png",
+      "wordpressMediaId": 23813610,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "dd45f758c8b07395c81cefdb68bc35ea6c0d8a220a1820f894efb9720caf3137",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-11-480.webp",
+          "width": 480,
+          "height": 556,
+          "bytes": 16088
+        },
+        {
+          "file": "/images/services/service-11-960.webp",
+          "width": 960,
+          "height": 1111,
+          "bytes": 38108
+        },
+        {
+          "file": "/images/services/service-11-1179.webp",
+          "width": 1179,
+          "height": 1365,
+          "bytes": 49740
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 434,
+        "right": 435,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1179,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-12",
+      "src": "/images/services/service-12-960.webp",
+      "srcset": "/images/services/service-12-480.webp 480w, /images/services/service-12-960.webp 960w, /images/services/service-12-1302.webp 1302w",
+      "width": 960,
+      "height": 1006,
+      "alt": "Perro de pelaje oscuro apoyado junto a una mesa de atención.",
+      "caption": "Cercanía en un espacio de atención.",
+      "group": "7dias",
+      "sourceOrder": 6,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/12.png",
+      "wordpressMediaId": 23813611,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "34e40a580aeb729ce97546c9b47582f3dd1df64e1c8aff44fe26561a84dcad7f",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-12-480.webp",
+          "width": 480,
+          "height": 503,
+          "bytes": 14700
+        },
+        {
+          "file": "/images/services/service-12-960.webp",
+          "width": 960,
+          "height": 1006,
+          "bytes": 33506
+        },
+        {
+          "file": "/images/services/service-12-1302.webp",
+          "width": 1302,
+          "height": 1365,
+          "bytes": 48672
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 373,
+        "right": 373,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1302,
+          "height": 1365
+        }
+      }
+    },
+    {
+      "id": "service-gallery-13",
+      "src": "/images/services/service-13-960.webp",
+      "srcset": "/images/services/service-13-480.webp 480w, /images/services/service-13-960.webp 960w, /images/services/service-13-1307.webp 1307w",
+      "width": 960,
+      "height": 1003,
+      "alt": "Integrantes del equipo con indumentaria quirúrgica durante un procedimiento.",
+      "caption": "Trabajo del equipo durante un procedimiento.",
+      "group": "7dias",
+      "sourceOrder": 7,
+      "sourceGalleryId": "dipi_image_gallery_1",
+      "sourcePage": "https://www.hvdesantamonica.com.co/nuestros-servicios/",
+      "sourceUrl": "https://www.hvdesantamonica.com.co/wp-content/uploads/2026/03/13.png",
+      "wordpressMediaId": 23813612,
+      "sourceDimensions": {
+        "width": 2048,
+        "height": 1365
+      },
+      "sourceSha256": "ef2f3b710ff326717e4b657525b178f9a0c839975850be0422292e61599862f8",
+      "sourceAssetPreviouslyPresent": false,
+      "processing": "Eliminación exclusiva de las columnas blancas documentadas, conversión a WebP y reducción proporcional sin ampliación, reencuadre del contenido ni texto añadido.",
+      "variants": [
+        {
+          "file": "/images/services/service-13-480.webp",
+          "width": 480,
+          "height": 501,
+          "bytes": 29678
+        },
+        {
+          "file": "/images/services/service-13-960.webp",
+          "width": 960,
+          "height": 1003,
+          "bytes": 68002
+        },
+        {
+          "file": "/images/services/service-13-1307.webp",
+          "width": 1307,
+          "height": 1365,
+          "bytes": 97542
+        }
+      ],
+      "crop": {
+        "method": "Solo columnas laterales uniformes RGB(255,255,255); se conserva todo el contenido fotográfico.",
+        "left": 371,
+        "right": 370,
+        "top": 0,
+        "bottom": 0,
+        "outputDimensions": {
+          "width": 1307,
+          "height": 1365
+        }
+      }
+    }
+  ]
+}

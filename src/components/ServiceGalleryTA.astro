@@ -1,0 +1,60 @@
+---
+import IconTA from '@/components/IconTA.astro';
+import type { ServiceGalleryPhoto } from '@/data/serviceGallery';
+interface Props { group: '24h' | '7dias'; title: string; photos: readonly ServiceGalleryPhoto[] }
+const { group, title, photos } = Astro.props;
+const first = photos[0];
+---
+{first && <div class="service-gallery reveal" data-service-gallery role="group" aria-label={`Fotografías: ${title}`}>
+  <div class="gallery-top"><span>EL CUIDADO, DE CERCA</span><span data-gallery-counter aria-live="polite">1 / {photos.length}</span></div>
+  <div class="gallery-stage" data-gallery-stage tabindex="0" role="region" aria-label={`Galería ${title} Usa las flechas para explorar las fotos.`}>
+    {photos.map((photo,i)=><figure class="gallery-slide" data-gallery-slide><img src={photo.src} srcset={photo.srcset} sizes="(max-width:760px) 90vw, 44vw" width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async"/><figcaption class="sr-only" data-gallery-caption>{photo.caption} · Foto {i+1} de {photos.length}</figcaption></figure>)}
+  </div>
+  <div class="gallery-meta"><p data-gallery-description>{first.caption}</p><div class="gallery-controls" data-gallery-enhanced hidden><button type="button" data-gallery-prev aria-label={`Foto anterior de ${title}`}><IconTA name="arrow" size={18}/></button><button type="button" data-gallery-next aria-label={`Foto siguiente de ${title}`}><IconTA name="arrow" size={18}/></button></div></div>
+  <div class="gallery-thumbs" style={`--photo-count: ${photos.length}`} role="group" aria-label={`Elige una foto de ${title}`}>
+    {photos.map((photo,i)=><a href={photo.src} target="_blank" rel="noopener noreferrer" data-gallery-thumb aria-label={`Ver foto ${i+1} de ${title}`} aria-current={i===0?'true':undefined}><img src={photo.src} srcset={photo.srcset} sizes="(max-width:760px) 12vw, 6vw" width="90" height="90" alt="" loading="lazy"/><span>{String(i+1).padStart(2,'0')}</span></a>)}
+  </div>
+  <a class="gallery-expand text-link" href={first.src} target="_blank" rel="noopener noreferrer" data-gallery-expand>Ver fotografía completa<IconTA name="arrow" size={16}/></a>
+  <dialog class="gallery-viewer" data-gallery-viewer aria-labelledby={`service-gallery-${group}-title`}>
+    <div class="gallery-viewer-top"><div><p>GALERÍA DEL HOSPITAL</p><h3 id={`service-gallery-${group}-title`}>{title}</h3></div><button type="button" data-gallery-close aria-label="Cerrar fotografía"><IconTA name="close" size={24}/></button></div>
+    <img data-gallery-full-image src={first.src} srcset={first.srcset} sizes="95vw" width={first.width} height={first.height} alt={first.alt} loading="lazy"/>
+    <p data-gallery-full-caption>{first.caption}</p>
+  </dialog>
+</div>}
+<script>
+import { initServiceGalleries } from '@/composables/gallery/initServiceGallery';
+initServiceGalleries();
+</script>
+<style>
+  .service-gallery { min-width:0; padding:19px; background:#f0f7f4; border:1px solid #dce9e3; border-radius:22px; }
+  .gallery-top { display:flex; align-items:center; justify-content:space-between; gap:15px; color:#53786f; padding:2px 2px 15px; font-size:10px; letter-spacing:.09em; }
+  .gallery-top>span:last-child { color:#027b76; font-size:12px; letter-spacing:0; }
+  .gallery-stage { width:100%; display:flex; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scrollbar-width:none; border-radius:12px; background:#e5eee9; aspect-ratio:3/2; }
+  .gallery-stage::-webkit-scrollbar { display:none; }
+  .gallery-slide { position:relative; width:100%; flex:0 0 100%; scroll-snap-align:start; scroll-snap-stop:always; margin:0; min-width:0; }
+  .gallery-slide>img { width:100%; height:100%; display:block; object-fit:contain; }
+  .gallery-meta { display:flex; gap:15px; justify-content:space-between; align-items:center; min-height:65px; padding-block:15px; }
+  .gallery-meta>p { color:#4f6c69; font-size:13px; line-height:1.6; }
+  .gallery-controls { display:flex; align-items:center; gap:7px; flex-shrink:0; }
+  .gallery-controls>button { width:34px; height:34px; border:1px solid #bdd8cd; border-radius:50%; color:#027b76; background:transparent; display:grid; place-items:center; }
+  .gallery-controls>button:first-child :global(svg) { transform:rotate(-135deg); }
+  .gallery-controls>button:last-child :global(svg) { transform:rotate(45deg); }
+  .gallery-controls>button:hover { background:white; }
+  .gallery-thumbs { display:grid; grid-template-columns:repeat(var(--photo-count),minmax(0,1fr)); gap:7px; }
+  .gallery-thumbs>a { display:block; position:relative; border:2px solid transparent; border-radius:9px; overflow:hidden; aspect-ratio:1; min-height:40px; background:#dfece5; opacity:.7; transition:opacity .2s,border-color .2s; }
+  .gallery-thumbs>a[aria-current],.gallery-thumbs>a:hover { opacity:1; border-color:#027b76; }
+  .gallery-thumbs img { width:100%; height:100%; object-fit:cover; }
+  .gallery-thumbs span { position:absolute; bottom:3px; right:3px; min-width:17px; text-align:center; background:#ffffffeb; color:#027b76; border-radius:4px; font-size:9px; line-height:1.5; }
+  .gallery-expand { display:flex; gap:14px; align-items:center; width:max-content; margin-top:10px; font-size:12px; color:#027b76; }
+  .gallery-viewer { width:min(100% - 32px,1060px); max-height:94dvh; border:0; border-radius:20px; padding:22px; background:#f7fbf8; color:#2c3d49; margin:auto; box-shadow:0 25px 100px #132f3b40; }
+  .gallery-viewer::backdrop { background:#132f3bce; }
+  .gallery-viewer-top { display:flex; justify-content:space-between; gap:20px; align-items:center; margin-bottom:15px; }
+  .gallery-viewer-top p { color:#607b74; font-size:10px; letter-spacing:.12em; }
+  .gallery-viewer-top h3 { font-size:22px; font-weight:500; margin-top:5px; }
+  .gallery-viewer-top>button { width:40px; height:40px; border:1px solid #cbded4; background:white; color:#027b76; border-radius:50%; display:grid; place-items:center; }
+  .gallery-viewer>img { display:block; width:100%; height:min(70dvh,780px); object-fit:contain; background:#e8f0eb; border-radius:12px; }
+  .gallery-viewer>p { font-size:14px; line-height:1.7; margin-top:15px; color:#53736b; }
+  @media(max-width:1000px) { .service-gallery { padding:14px; }.gallery-meta>p { font-size:12px; }.gallery-controls>button { width:30px; height:30px; }.gallery-thumbs { gap:4px; }.gallery-thumbs span { font-size:8px; }.gallery-top { font-size:9px; } }
+  @media(max-width:760px) { .service-gallery { padding:15px; border-radius:19px; }.gallery-top { font-size:10px; padding-bottom:13px; }.gallery-meta { padding-block:14px; min-height:62px; }.gallery-meta>p { font-size:13px; }.gallery-controls>button { width:34px; height:34px; }.gallery-thumbs { gap:5px; }.gallery-expand { font-size:13px; margin-top:12px; }.gallery-viewer { padding:17px; }.gallery-viewer-top h3 { font-size:20px; }.gallery-viewer>p { font-size:13px; }.gallery-viewer>img { height:66dvh; } }
+  @media(prefers-reduced-motion:reduce) { .gallery-thumbs>a { transition:none; } }
+</style>
