@@ -1,0 +1,18 @@
+<template>
+<style>@font-face{font-family:"Outfit Video";src:url("assets/fonts/outfit.woff2") format("woff2");font-weight:100 900;}*{box-sizing:border-box;margin:0}#root{position:absolute;inset:0;overflow:hidden;background:#eff7f4;color:#2c3d49;font-family:"Outfit Video";}
+
+#root{background:#027b76;color:white}#equipo-label{position:absolute;left:180px;top:100px;font-size:34px;letter-spacing:4px;color:#ccf5e9}#equipo-title{position:absolute;left:180px;top:220px;width:730px;font-size:94px;font-weight:450;line-height:1.08;letter-spacing:-3px}#equipo-people{position:absolute;left:180px;top:540px;width:700px;height:440px;object-fit:contain;border-radius:24px}#equipo-care{position:absolute;left:1000px;top:220px;width:740px;height:650px;object-fit:contain;border-radius:24px}
+</style>
+<div data-hf-id="hf-oc4m" id="root" data-composition-id="equipo" data-width="1920" data-height="1080">
+<p data-hf-id="hf-j9fk" id="equipo-label">PERSONAS QUE CUIDAN</p><h2 data-hf-id="hf-cque" id="equipo-title">El equipo detrás<br data-hf-id="hf-x5px"/>de cada cuidado.</h2><img data-hf-id="hf-9qen" id="equipo-people" src="assets/equipo.webp" alt="Equipo del Hospital Veterinario de Santa Mónica"/><img data-hf-id="hf-ucbj" id="equipo-care" src="assets/atencion.webp" alt="Atención veterinaria en el hospital"/>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+
+tl.fromTo('#equipo-title',{y:50,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.05);
+tl.fromTo('#equipo-care',{x:100,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},.2);
+tl.fromTo('#equipo-people',{y:65,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.65);
+
+window.__timelines.equipo=tl;
+</script>
+</template>

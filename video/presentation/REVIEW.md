@@ -1,0 +1,1 @@
+Revisados cortes, cinco escenas y lectura a 360 px. Corregidos fotogramas vacíos de entrada y duración del cierre. Validación de estructura, ejecución, contraste y composición sin errores. Audio omitido para la presentación automática silenciosa. Las capturas muestran la web publicada antes de integrar el reproductor.

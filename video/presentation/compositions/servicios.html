@@ -1,0 +1,18 @@
+<template>
+<style>@font-face{font-family:"Outfit Video";src:url("assets/fonts/outfit.woff2") format("woff2");font-weight:100 900;}*{box-sizing:border-box;margin:0}#root{position:absolute;inset:0;overflow:hidden;background:#eff7f4;color:#2c3d49;font-family:"Outfit Video";}
+
+#root{background:#dff3eb}#servicios-label{position:absolute;left:180px;top:70px;color:#027b76;font-size:46px;font-weight:450}#servicios-frame{position:absolute;left:130px;top:170px;width:1660px;height:815px;overflow:hidden;border:1px solid #c4dfd4;border-radius:28px;background:white}#servicios-screen{width:1660px;height:auto;display:block}
+</style>
+<div data-hf-id="hf-wsb8" id="root" data-composition-id="servicios" data-width="1920" data-height="1080">
+<p data-hf-id="hf-s5oy" id="servicios-label">Encuentra el cuidado que necesitan.</p><div data-hf-id="hf-ftlw" id="servicios-frame"><img data-hf-id="hf-oup2" id="servicios-screen" data-layout-allow-overflow src="assets/web-servicios.webp" alt="Galería y listado real de los servicios de Santa Mónica"/></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+
+tl.fromTo('#servicios-frame',{y:80,opacity:1},{y:0,opacity:1,duration:.42,ease:'power3.out'},0);
+tl.fromTo('#servicios-label',{y:20,opacity:0},{y:0,opacity:1,duration:.3,ease:'power2.out'},.1);
+tl.fromTo('#servicios-screen',{y:0},{y:-480,duration:1.6,ease:'power2.inOut'},.85);
+
+window.__timelines.servicios=tl;
+</script>
+</template>
