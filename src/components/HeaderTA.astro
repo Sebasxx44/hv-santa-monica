@@ -1,0 +1,10 @@
+---
+import BrandTA from '@/components/BrandTA.astro';
+import IconTA from '@/components/IconTA.astro';
+interface Props { active: string }
+const { active } = Astro.props;
+const links = [{href:'/',label:'Inicio'},{href:'/nuestros-servicios/',label:'Servicios'},{href:'/sobre-nosotros/',label:'El hospital'},{href:'/testimonios/',label:'Testimonios'},{href:'/blog-de-actualidad/',label:'Actualidad'}];
+const selected = (href: string) => active === href || active.replace(/^\//, '').replace(/\/$/,'') === href.replace(/^\//, '').replace(/\/$/,'');
+---
+<div class="availability-bar"><div><span class="availability-dot"></span>Abiertos las 24 horas, todos los días<span class="availability-place">Dosquebradas · Risaralda</span></div><a href="tel:+573215665926"><IconTA name="phone" size={13}/>321 566 5926</a></div>
+<header class="site-header section-shell"><BrandTA/><nav class="desktop-nav" aria-label="Navegación principal">{links.map(link=><a href={link.href} aria-current={selected(link.href)?'page':undefined}>{link.label}</a>)}</nav><a href="/contactanos/" class="header-contact">Conversemos<IconTA name="arrow" size={16}/></a><button id="menu-toggle" class="menu-toggle" aria-label="Abrir navegación" aria-expanded="false" aria-controls="mobile-nav"><IconTA name="menu"/></button><nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>{[...links,{href:'/contactanos/',label:'Contáctanos'}].map((link,i)=><a href={link.href}><span>0{i+1}</span>{link.label}<IconTA name="arrow" size={18}/></a>)}</nav></header>

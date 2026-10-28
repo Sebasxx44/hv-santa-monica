@@ -1,0 +1,52 @@
+---
+import IconTA from "@/components/IconTA.astro";
+import { hospital, services } from "@/data/hospital";
+---
+<div class="request-card">
+  <div class="request-heading"><p class="eyebrow">CONVERSEMOS SOBRE SU CUIDADO</p><h2>Prepara tu solicitud.</h2><p>Podrás revisar los datos antes de abrir WhatsApp. La consulta general se atiende sin cita previa y por orden de llegada.</p></div>
+  <form id="contact-form" data-whatsapp={hospital.whatsapp}>
+    <div class="field"><label for="name">Tu nombre <span>*</span></label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required placeholder="Nombre completo" /></div>
+    <div class="field-row"><div class="field"><label for="phone">Teléfono de contacto <span>*</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" minlength="7" maxlength="25" required placeholder="Tu número de contacto" /></div><div class="field"><label for="petName">Nombre de tu mascota <small>Opcional</small></label><input id="petName" name="petName" type="text" maxlength="80" placeholder="¿Cómo se llama?" /></div></div>
+    <div class="field"><label for="service">¿Sobre qué servicio deseas información? <span>*</span></label><select id="service" name="service" required><option value="" disabled selected>Selecciona un servicio</option><optgroup label="Las 24 horas">{services.filter((service) => service.group === "24h").map((service) => <option value={service.id}>{service.title}</option>)}</optgroup><optgroup label="Los 7 días">{services.filter((service) => service.group === "7dias").map((service) => <option value={service.id}>{service.title}</option>)}</optgroup></select></div>
+    <div class="field"><label for="message">Cuéntanos cómo podemos ayudarte <small>Opcional</small></label><textarea id="message" name="message" rows="4" maxlength="1200" placeholder="Escribe el motivo de tu solicitud"></textarea></div>
+    <label class="consent"><input name="consent" id="consent" type="checkbox" required /><span>Entiendo que estos datos se incorporarán al mensaje que abriré en WhatsApp. Podré revisarlo antes de enviarlo al hospital.</span></label>
+    <button type="submit" class="button button-primary prepare-button" data-contact-submit disabled>Revisar mi solicitud <IconTA name="arrow" size={18} /></button>
+    <p class="request-note">La solicitud no confirma una cita ni disponibilidad de un especialista.</p>
+    <noscript><p class="request-note">Para preparar la solicitud necesitas activar JavaScript. También puedes <a href={`https://wa.me/${hospital.whatsapp}`} target="_blank" rel="noreferrer">escribir directamente al hospital por WhatsApp</a>.</p></noscript>
+  </form>
+  <div id="contact-review" class="request-review" hidden><p class="eyebrow">ANTES DE CONTINUAR</p><h3>Revisa tu solicitud con calma.</h3><p id="contact-summary"></p><a id="contact-whatsapp" class="button button-primary" target="_blank" rel="noreferrer">Continuar en WhatsApp <IconTA name="whatsapp" size={20} /></a><button type="button" class="edit-request" data-edit-request>Editar solicitud</button><p>WhatsApp se abrirá solo cuando pulses el enlace. El envío final depende de ti.</p></div>
+  <p id="contact-status" role="status" aria-live="polite" tabindex="-1" class="request-status"></p>
+</div>
+<style>
+  .request-card { padding: 34px; background: #f4faf7; border: 1px solid #dcebe4; border-radius: 24px; }
+  .request-heading { padding-bottom: 27px; margin-bottom: 28px; border-bottom: 1px solid #d8e8e0; }
+  .request-heading h2 { color: #2c3d49; font-size: 31px; font-weight: 500; line-height: 1.25; letter-spacing: -.8px; margin: 17px 0 15px; }
+  .request-heading > p:last-child { color: #5b7278; font-size: 14px; line-height: 1.85; }
+  .field { min-width: 0; margin-bottom: 23px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: #355a60; margin-bottom: 10px; line-height: 1.6; }
+  .field label > span { color: #027b76; margin-left: 3px; }
+  .field label small { color: #5b7278; font-size: 11px; font-weight: 400; margin-left: 6px; }
+  .field input, .field select, .field textarea { display: block; width: 100%; min-width: 0; border: 1px solid #cbdfd6; border-radius: 8px; color: #2c3d49; background: white; padding: 13px 14px; font: inherit; font-size: 14px; line-height: 1.6; }
+  .field input, .field select { min-height: 49px; }
+  .field textarea { min-height: 125px; resize: vertical; }
+  .field input::placeholder, .field textarea::placeholder { color: #60797e; opacity: 1; font-size: 13px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid #027b76; outline-offset: 2px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
+  .consent { display: flex; align-items: flex-start; gap: 12px; margin: 5px 0 28px; cursor: pointer; }
+  .consent input { width: 17px; height: 17px; flex-shrink: 0; margin: 4px 0 0; accent-color: #027b76; }
+  .consent > span { color: #5b7278; font-size: 12px; line-height: 1.85; }
+  .prepare-button { width: 100%; justify-content: space-between; }
+  .prepare-button:disabled { cursor: default; opacity: .65; }
+  .request-note { color: #5b7278; font-size: 12px; line-height: 1.8; margin-top: 17px; }
+  .request-note a { color: #027b76; text-decoration: underline; text-underline-offset: 3px; }
+  .request-review { padding: 25px; background: white; border: 1px solid #d6e7de; border-radius: 13px; }
+  .request-review h3 { color: #2c3d49; font-size: 26px; font-weight: 500; line-height: 1.3; letter-spacing: -.6px; margin: 17px 0 22px; }
+  #contact-summary { color: #526d74; font-size: 14px; line-height: 1.9; white-space: pre-line; overflow-wrap: anywhere; margin-bottom: 27px; }
+  .request-review .button { width: 100%; justify-content: space-between; font-size: 13px; }
+  .edit-request { display: block; background: none; border: 0; padding: 0; width: 100%; margin-top: 21px; font: inherit; color: #027b76; font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+  .request-review > p:last-child { color: #5b7278; font-size: 12px; line-height: 1.8; margin-top: 22px; }
+  .request-status { color: #027b76; font-size: 13px; line-height: 1.8; margin-top: 16px; }
+  .request-status:empty { margin: 0; }
+  @media (max-width: 950px) { .request-card { padding: 29px; } .field-row { grid-template-columns: 1fr; gap: 0; } .request-heading h2 { font-size: 28px; } }
+  @media (max-width: 650px) { .request-card { padding: 27px 22px; border-radius: 20px; } .request-heading h2 { font-size: 29px; } .request-heading > p:last-child { font-size: 14px; } .field input, .field select, .field textarea { font-size: 16px; padding-inline: 12px; } .field input::placeholder, .field textarea::placeholder { font-size: 13px; } .field label { font-size: 13px; } .consent > span { font-size: 12px; } .request-review { padding: 24px 19px; } .request-review h3 { font-size: 26px; } .request-review .button { font-size: 12px; } }
+</style>

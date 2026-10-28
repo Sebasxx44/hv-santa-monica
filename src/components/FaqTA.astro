@@ -1,0 +1,7 @@
+---
+import IconTA from '@/components/IconTA.astro';
+import { faqs } from '@/data/hospital';
+import { clinicalFaqs } from '@/data/clinicalFaqs';
+const questions = [...faqs.slice(0,2),...clinicalFaqs,...faqs.slice(2)];
+---
+<section class="faq-section section-shell" aria-labelledby="faq-title"><div class="faq-heading reveal"><p class="eyebrow">Antes de venir</p><h2 id="faq-title">Preguntas que hacen<br/><span>todo más sencillo.</span></h2><a href="/contactanos/" class="text-link">Hablemos de tu caso<IconTA name="arrow" size={18}/></a></div><div class="faq-list">{questions.map((faq,i)=><details class="reveal" name="hospital-faq"><summary><span>{String(i+1).padStart(2,'0')}</span>{faq.question}<IconTA name="plus" size={18}/></summary><p>{faq.answer}</p></details>)}</div></section>

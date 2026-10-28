@@ -1,0 +1,20 @@
+---
+import '@fontsource-variable/outfit';
+import '@fontsource-variable/nunito-sans';
+import '@/styles/global.css';
+import HeaderTA from '@/components/HeaderTA.astro';
+import FooterTA from '@/components/FooterTA.astro';
+interface Props { title: string; description: string; active: string; robots?: string }
+const { title, description, active, robots } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} · HV Santa Mónica</title><meta name="description" content={description}/><meta name="theme-color" content="#027b76"/>{robots && <meta name="robots" content={robots}/>}<link rel="canonical" href={canonical}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><meta property="og:type" content="website"/><meta property="og:title" content={`${title} · HV Santa Mónica`}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/images/equipo-hospital.webp',Astro.site)}/><meta name="twitter:card" content="summary_large_image"/><slot name="head"/></head><body><a class="skip-link" href="#contenido">Saltar al contenido</a><HeaderTA active={active}/><main id="contenido"><slot/></main><FooterTA/><script>
+import { initMotion } from '@/composables/motion/initMotion';
+import { initNavigation } from '@/composables/navigation/initNavigation';
+import { initContact } from '@/composables/contact/initContact';
+import { initServiceFilters } from '@/composables/services/initServiceFilters';
+initMotion();
+initNavigation();
+initContact();
+initServiceFilters();
+</script></body></html>

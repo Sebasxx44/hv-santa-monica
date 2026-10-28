@@ -1,0 +1,53 @@
+---
+import PageLayoutTA from "@/components/PageLayoutTA.astro";
+import ActionHeaderTA from "@/components/ActionHeaderTA.astro";
+import IconTA from "@/components/IconTA.astro";
+import ContactFormTA from "@/components/ContactFormTA.astro";
+import FaqTA from "@/components/FaqTA.astro";
+import { hospital } from "@/data/hospital";
+---
+<PageLayoutTA title="Contáctanos" description="Comunícate con el Hospital Veterinario de Santa Mónica en Dosquebradas. Teléfono 3215665926, atención 24/7 y consulta general sin cita previa." active="contactanos">
+  <section class="contact-intro section-shell"><ActionHeaderTA eyebrow="ESTAMOS CERCA DE TI Y DE ELLOS" title="Cuéntanos cómo podemos ayudarte." description="La atención personalizada empieza por escucharte. Comunícate con el hospital o prepara una solicitud para continuar en WhatsApp." /><div class="walk-in-note"><IconTA name="stethoscope" size={23} /><p><strong>Consulta general sin cita previa.</strong> La atención se realiza por orden de llegada. Para otros servicios, consulta la disponibilidad con el equipo.</p></div></section>
+  <section class="contact-main section-shell"><div class="reveal"><ContactFormTA /></div><aside class="contact-aside reveal" aria-label="Ubicación y canales de contacto"><div class="location-card"><span class="contact-icon"><IconTA name="pin" size={27} /></span><p class="eyebrow">SANTA MÓNICA, DOSQUEBRADAS</p><h2>Aquí cuidamos<br />de quienes más quieres.</h2><address>Carrera 19 # 17 B11<br />Barrio Santa Mónica<br />Dosquebradas, Risaralda</address><a href={hospital.mapUrl} target="_blank" rel="noreferrer" class="text-link">Cómo llegar <IconTA name="arrow" size={17} /></a></div><div class="contact-channels"><a href="tel:+573215665926"><IconTA name="phone" size={23} /><div><span>Llámanos</span><strong>{hospital.phoneDisplay}</strong></div><IconTA name="arrow" size={17} /></a><a href={`https://wa.me/${hospital.whatsapp}`} target="_blank" rel="noreferrer"><IconTA name="whatsapp" size={23} /><div><span>Conversemos en WhatsApp</span><strong>{hospital.phoneDisplay}</strong></div><IconTA name="arrow" size={17} /></a><a href={`mailto:${hospital.email}`} class="email-channel"><IconTA name="mail" size={23} /><div><span>Escríbenos</span><strong>{hospital.email}</strong></div><IconTA name="arrow" size={17} /></a></div><div class="hours-card"><IconTA name="clock" size={27} /><div><strong>Las 24 horas. Los 7 días.</strong><p>Servicio de atención permanente para las mascotas y sus familias.</p></div></div><div class="social-links"><p>También estamos en</p><a href={hospital.instagram} target="_blank" rel="noreferrer"><IconTA name="instagram" size={19} /><span>Instagram</span><IconTA name="arrow" size={16} /></a><a href={hospital.facebook} target="_blank" rel="noreferrer"><IconTA name="facebook" size={19} /><span>Facebook</span><IconTA name="arrow" size={16} /></a></div></aside></section>
+  <section class="visit-section section-shell"><figure class="reception-photo reveal"><img src="/images/atencion-recepcion.webp" srcset="/images/atencion-recepcion-480.webp 480w, /images/atencion-recepcion-960.webp 960w, /images/atencion-recepcion-1600.webp 1600w" sizes="(max-width:650px) 88vw, 48vw" width="960" height="720" alt="Espacio de atención y recepción del Hospital Veterinario de Santa Mónica" loading="lazy" decoding="async" /></figure><div class="visit-copy reveal"><p class="eyebrow">UN LUGAR PARA SENTIRSE ACOMPAÑADOS</p><h2>El primer paso<br /><span>puede ser una conversación.</span></h2><p>Estamos en el barrio Santa Mónica, en Dosquebradas. Puedes contactarnos para consultar por nuestros servicios y conocer la disponibilidad de atención especializada.</p><a href={hospital.mapUrl} target="_blank" rel="noreferrer" class="button button-outline">Abrir ubicación <IconTA name="pin" size={18} /></a></div></section>
+  <FaqTA />
+</PageLayoutTA>
+<style>
+  .contact-intro { padding-block: 65px 37px; max-width: 960px; }
+  .walk-in-note { display: flex; gap: 14px; align-items: flex-start; color: #027b76; margin-top: 25px; padding: 20px 23px; background: #edf8f3; border: 1px solid #dbebe4; border-radius: 14px; }
+  .walk-in-note svg { flex-shrink: 0; margin-top: 4px; }
+  .walk-in-note p { color: #5b7278; font-size: 14px; line-height: 1.85; }
+  .walk-in-note strong { color: #2c3d49; font-weight: 500; }
+  .contact-main { display: grid; grid-template-columns: 1.35fr 1fr; gap: 7%; padding-block: 10px 75px; align-items: start; }
+  .contact-aside { min-width: 0; padding-top: 2px; }
+  .location-card { padding: 31px; background: #ecf7f3; border: 1px solid #d9eae2; border-radius: 22px; }
+  .contact-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: #d5ede3; color: #027b76; margin-bottom: 27px; }
+  .location-card h2 { color: #2c3d49; font-size: 29px; line-height: 1.25; font-weight: 500; letter-spacing: -.8px; margin: 19px 0 22px; }
+  .location-card address { color: #526e74; font-size: 15px; line-height: 1.95; font-style: normal; }
+  .location-card .text-link { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; font-size: 14px; }
+  .contact-channels { margin-top: 30px; }
+  .contact-channels > a { display: flex; align-items: flex-start; gap: 15px; padding: 22px 0; border-bottom: 1px solid #dce8e2; }
+  .contact-channels > a > svg:first-child { color: #027b76; flex-shrink: 0; margin-top: 4px; }
+  .contact-channels > a > svg:last-child { margin-left: auto; flex-shrink: 0; color: #027b76; margin-top: 10px; }
+  .contact-channels > a > div { min-width: 0; }
+  .contact-channels span { display: block; color: #60797e; font-size: 12px; margin-bottom: 8px; line-height: 1.7; }
+  .contact-channels strong { color: #2c3d49; font-size: 16px; font-weight: 500; line-height: 1.6; }
+  .email-channel strong { font-size: 13px; overflow-wrap: anywhere; }
+  .hours-card { display: flex; align-items: flex-start; gap: 15px; margin-top: 28px; padding: 23px; background: #f1f7f4; border-radius: 15px; }
+  .hours-card > svg { color: #027b76; flex-shrink: 0; margin-top: 2px; }
+  .hours-card strong { color: #2c3d49; font-size: 16px; font-weight: 500; line-height: 1.5; }
+  .hours-card p { color: #5b7278; font-size: 13px; line-height: 1.8; margin-top: 9px; }
+  .social-links { margin-top: 28px; }
+  .social-links > p { font-size: 13px; color: #60797e; margin-bottom: 20px; }
+  .social-links a { display: flex; align-items: center; gap: 11px; color: #027b76; font-size: 14px; margin-bottom: 20px; }
+  .social-links a > svg:last-child { margin-left: auto; }
+  .visit-section { display: grid; grid-template-columns: 1.15fr 1fr; gap: 8%; align-items: center; padding-block: 45px 75px; }
+  .reception-photo { height: 375px; background: #e5f0e9; border-radius: 22px 80px 22px 22px; margin: 0; overflow: hidden; }
+  .reception-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .visit-copy h2 { font-size: clamp(31px, 3.5vw, 48px); line-height: 1.16; font-weight: 500; letter-spacing: -1.3px; color: #2c3d49; margin: 20px 0 22px; }
+  .visit-copy h2 span { color: #027b76; }
+  .visit-copy > p:last-of-type { color: #5b7278; font-size: 15px; line-height: 1.85; margin-bottom: 27px; max-width: 440px; }
+  .visit-copy .button { font-size: 14px; }
+  @media (max-width: 950px) { .contact-main { grid-template-columns: 1.2fr 1fr; gap: 5%; } .location-card { padding: 27px; } .location-card h2 { font-size: 25px; } .location-card address { font-size: 14px; } .contact-channels > a { gap: 12px; } .email-channel strong { font-size: 12px; } .hours-card { padding: 20px; gap: 13px; } .visit-section { gap: 6%; } .reception-photo { height: 350px; } }
+  @media (max-width: 650px) { .contact-intro { padding-block: 42px 30px; } .walk-in-note { padding: 19px; gap: 12px; margin-top: 23px; } .walk-in-note p { font-size: 14px; } .contact-main { grid-template-columns: 1fr; gap: 32px; padding-bottom: 50px; } .location-card { padding: 29px; border-radius: 20px; } .location-card h2 { font-size: 29px; } .location-card address { font-size: 15px; } .contact-channels strong { font-size: 17px; } .contact-channels span { font-size: 13px; } .email-channel strong { font-size: 14px; } .hours-card p { font-size: 14px; } .hours-card strong { font-size: 17px; } .social-links > p { font-size: 13px; } .social-links a { font-size: 15px; } .visit-section { grid-template-columns: 1fr; gap: 30px; padding-block: 35px 55px; } .reception-photo { height: 300px; border-top-right-radius: 65px; } .visit-copy h2 { font-size: 36px; } .visit-copy > p:last-of-type { font-size: 14px; } }
+</style>

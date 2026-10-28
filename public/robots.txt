@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hv-santa-monica-sebaz.vercel.app/sitemap.xml

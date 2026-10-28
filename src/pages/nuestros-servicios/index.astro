@@ -1,0 +1,85 @@
+---
+import PageLayoutTA from "@/components/PageLayoutTA.astro";
+import ActionHeaderTA from "@/components/ActionHeaderTA.astro";
+import IconTA from "@/components/IconTA.astro";
+import ContactBandTA from "@/components/ContactBandTA.astro";
+import FaqTA from "@/components/FaqTA.astro";
+import { hospital, services, specialties } from "@/data/hospital";
+
+const groups = [
+  { id: "24h", title: "Las 24 horas.", eyebrow: "CUIDADO QUE NO MIRA EL RELOJ", description: "Atención para acompañar a tu mascota cuando lo necesita." },
+  { id: "7dias", title: "Los 7 días.", eyebrow: "DISTINTAS NECESIDADES. UN MISMO COMPROMISO.", description: "Servicios de apoyo, cuidado y seguimiento para cada etapa." },
+] as const;
+---
+<PageLayoutTA title="Nuestros servicios" description="Urgencias y consulta general 24/7 en Dosquebradas. Conoce las especialidades, cirugía, diagnóstico, hospitalización, medicina preventiva y farmacia de Santa Mónica." active="nuestros-servicios">
+  <section class="services-intro section-shell">
+    <div class="intro-copy"><ActionHeaderTA eyebrow="NUESTROS SERVICIOS" title="Cuidado para cada momento de su vida." description="Atención integral, cercanía con las familias y un equipo que trabaja por el bienestar de las mascotas." /><div class="intro-actions"><a href="/contactanos/" class="button button-primary">Conoce cómo podemos ayudarte <IconTA name="arrow" size={18} /></a><a href="tel:+573215665926" class="text-link"><IconTA name="phone" size={17} />{hospital.phoneDisplay}</a></div></div>
+    <aside class="availability-card reveal" aria-label="Atención veterinaria permanente"><div class="clock-art" aria-hidden="true"><svg viewBox="0 0 180 180" fill="none" focusable="false"><circle cx="90" cy="90" r="76" stroke="currentColor" stroke-opacity=".2"/><circle cx="90" cy="90" r="60" stroke="currentColor" stroke-width="2"/><path d="M90 50v43l28 17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M90 20v8m70 62h-8M90 160v-8M20 90h8" stroke="currentColor" stroke-width="2"/><circle cx="90" cy="92" r="5" fill="currentColor"/></svg><span>24/7</span></div><p>Siempre hay un momento<br />para <strong>cuidar de ellos.</strong></p><div class="availability-footer"><span>Urgencias veterinarias</span><IconTA name="heart" size={20} /></div></aside>
+  </section>
+  <div class="arrival-note section-shell"><span class="arrival-icon"><IconTA name="stethoscope" size={26} /></span><div><strong>Consulta general sin cita previa.</strong><p>Te atendemos por orden de llegada. Para especialidades y procedimientos, consulta la disponibilidad con el hospital.</p></div><a href="/contactanos/?servicio=consulta-general" class="text-link">Hablemos <IconTA name="arrow" size={16} /></a></div>
+  <section class="services-tools section-shell" aria-label="Encuentra un servicio">
+    <div class="services-toolbar">
+      <div class="service-search-field"><label for="service-search">Buscar un servicio</label><div class="service-search-input"><IconTA name="search" size={19} /><input id="service-search" type="search" placeholder="Por ejemplo, consulta o radiografía" autocomplete="off" /></div></div>
+      <div class="service-filter-field"><span id="service-filter-label">Disponibilidad</span><div class="service-filter-options" role="group" aria-label="Filtrar servicios"><button type="button" data-service-filter="all" aria-pressed="true">Todos</button><button type="button" data-service-filter="24h" aria-pressed="false">Las 24 horas</button><button type="button" data-service-filter="7dias" aria-pressed="false">Los 7 días</button></div></div>
+    </div>
+    <p id="service-results" role="status" aria-live="polite" aria-atomic="true">12 servicios encontrados</p>
+  </section>
+  {groups.map((group) => <section class="service-group section-shell" id={`grupo-${group.id}`} data-service-group={group.id}><ActionHeaderTA level="h2" eyebrow={group.eyebrow} title={group.title} description={group.description} /><div class="service-grid">{services.filter((service) => service.group === group.id).map((service) => <article class="service-card reveal" id={service.id} data-service-card data-group={service.group} data-search={`${service.title} ${service.description}`}><span class="service-icon"><IconTA name={service.icon} size={29} /></span><h3>{service.title}</h3><p>{service.description}</p><a href={`/contactanos/?servicio=${service.id}`}>Consultar este servicio <IconTA name="arrow" size={17} /></a></article>)}</div></section>)}
+  <section class="specialties-section section-shell"><div><p class="eyebrow">CONSULTA DE ESPECIALIDAD</p><h2>Distintas miradas.<br /><span>Un cuidado en equipo.</span></h2><p>Estas son las especialidades que el hospital presenta dentro de sus servicios. Comunícate para consultar la disponibilidad.</p></div><ul>{specialties.map((specialty, index) => <li><span>0{index + 1}</span><strong>{specialty}</strong><IconTA name="plus" size={19} /></li>)}</ul></section>
+  <FaqTA />
+  <ContactBandTA />
+</PageLayoutTA>
+<style>
+  .services-intro { display: grid; grid-template-columns: 1.25fr 1fr; gap: 9%; align-items: center; padding-block: 70px 65px; }
+  .intro-actions { display: flex; flex-wrap: wrap; gap: 23px; align-items: center; margin-top: 28px; }
+  .intro-actions .button { font-size: 13px; }
+  .intro-actions .text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; }
+  .availability-card { background: linear-gradient(145deg, #027b76, #067a73); color: white; border-radius: 28px 90px 28px 28px; padding: 30px 35px 25px; position: relative; overflow: hidden; }
+  .clock-art { position: relative; width: 175px; height: 175px; margin: 0 auto 24px; color: #a3ede0; }
+  .clock-art svg { width: 100%; height: 100%; }
+  .clock-art span { position: absolute; right: -21px; bottom: 4px; color: #027b76; background: #d6f7ed; padding: 8px 15px; font-size: 22px; font-weight: 600; border-radius: 25px; letter-spacing: -.6px; }
+  .availability-card > p { text-align: center; font-size: 24px; line-height: 1.4; font-weight: 400; letter-spacing: -.7px; }
+  .availability-card strong { font-weight: 500; }
+  .availability-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; margin-top: 27px; border-top: 1px solid #ffffff40; font-size: 12px; }
+  .arrival-note { display: flex; align-items: center; gap: 21px; background: #eaf6f3; border: 1px solid #d5ebe5; border-radius: 16px; padding-block: 25px; }
+  .arrival-icon { display: grid; place-items: center; height: 55px; width: 55px; border-radius: 16px; background: #d8eee8; color: #027b76; flex-shrink: 0; }
+  .arrival-note strong { font-size: 17px; font-weight: 500; color: #2c3d49; }
+  .arrival-note p { font-size: 14px; line-height: 1.8; color: #5b7278; max-width: 760px; margin-top: 7px; }
+  .arrival-note > a { margin-left: auto; flex-shrink: 0; font-size: 13px; }
+  .services-tools { padding-block: 48px 0; }
+  .services-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
+  .service-search-field, .service-filter-field { min-width: 0; }
+  .service-search-field > label, .service-filter-field > span { display: block; margin-bottom: 11px; color: #355a60; font-size: 13px; line-height: 1.6; font-weight: 500; }
+  .service-search-input { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 17px; background: #f6faf9; border: 1px solid #d3e5dd; border-radius: 12px; color: #027b76; }
+  .service-search-input > :global(svg) { flex-shrink: 0; }
+  .service-search-input:focus-within { outline: 2px solid #027b76; outline-offset: 3px; }
+  .service-search-input input { min-width: 0; width: 100%; border: 0; outline: none; background: transparent; padding-block: 13px; font: inherit; font-size: 14px; line-height: 1.7; color: #2c3d49; }
+  .service-search-input input::placeholder { color: #60797e; opacity: 1; }
+  .service-filter-options { display: grid; grid-template-columns: auto auto auto; gap: 4px; padding: 5px; background: #edf6f2; border: 1px solid #d3e5dd; border-radius: 12px; }
+  .service-filter-options button { border: 0; border-radius: 8px; padding: 10px 18px; color: #47676b; background: transparent; font: inherit; font-size: 13px; line-height: 1.5; cursor: pointer; min-height: 40px; }
+  .service-filter-options button[aria-pressed="true"] { color: white; background: #027b76; box-shadow: 0 2px 5px #174e4020; }
+  .service-filter-options button:hover { background: #dfefe7; color: #027b76; }
+  .service-filter-options button[aria-pressed="true"]:hover { background: #066f69; color: white; }
+  .service-filter-options button:focus-visible { outline: 2px solid #027b76; outline-offset: 3px; }
+  #service-results { color: #5b7278; font-size: 13px; line-height: 1.8; margin-top: 17px; min-height: 24px; }
+  .service-group { padding-block: 65px 60px; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 35px; }
+  .service-card { padding: 28px; background: #f6faf9; border: 1px solid #e0ece8; border-radius: 20px; min-height: 325px; display: flex; flex-direction: column; scroll-margin-top: 120px; }
+  .service-icon { width: 56px; height: 56px; border-radius: 17px; background: #e0f3ed; color: #027b76; display: grid; place-items: center; margin-bottom: 25px; }
+  .service-card h3 { color: #2c3d49; font-size: 23px; font-weight: 500; line-height: 1.3; letter-spacing: -.5px; margin: 0 0 15px; }
+  .service-card > p { color: #5c7379; font-size: 14px; line-height: 1.85; flex: 1; }
+  .service-card > a { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 25px; padding-top: 20px; border-top: 1px solid #dce9e4; color: #027b76; font-size: 13px; }
+  .specialties-section { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 10%; padding-block: 60px 80px; }
+  .specialties-section h2 { font-size: clamp(32px, 3.3vw, 47px); font-weight: 500; letter-spacing: -1.3px; line-height: 1.15; color: #2c3d49; margin: 20px 0 22px; }
+  .specialties-section h2 span { color: #027b76; }
+  .specialties-section > div > p:last-child { font-size: 15px; line-height: 1.85; color: #5c7379; max-width: 430px; }
+  .specialties-section ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid #dce8e3; }
+  .specialties-section li { display: flex; gap: 22px; align-items: center; padding: 22px 0; border-bottom: 1px solid #dce8e3; }
+  .specialties-section li > span { font-size: 12px; color: #668880; }
+  .specialties-section li > strong { font-size: 19px; font-weight: 500; color: #2c3d49; }
+  .specialties-section li > svg { margin-left: auto; color: #027b76; }
+  @media (max-width: 950px) { .services-intro { gap: 6%; } .availability-card { padding: 28px; } .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .arrival-note { gap: 17px; } .arrival-note p { font-size: 13px; } .specialties-section { gap: 7%; } }
+  @media (max-width: 800px) { .services-toolbar { grid-template-columns: minmax(0, 1fr); gap: 23px; } .service-filter-options { grid-template-columns: 1fr 1fr 1fr; } .service-filter-options button { padding-inline: 9px; font-size: 14px; } }
+  @media (max-width: 650px) { .services-tools { padding-top: 35px; } .service-search-input { padding-inline: 14px; } .service-search-input input { font-size: 16px; } .service-search-input input::placeholder { font-size: 13px; } .service-filter-options button { font-size: 13px; padding-inline: 7px; } }
+  @media (max-width: 650px) { .services-intro { grid-template-columns: 1fr; gap: 35px; padding-block: 42px 45px; } .availability-card { padding: 28px; border-top-right-radius: 75px; } .clock-art { width: 155px; height: 155px; } .availability-card > p { font-size: 25px; } .arrival-note { flex-wrap: wrap; padding-block: 25px; gap: 18px; border-radius: 14px; } .arrival-note > div { flex: 1; min-width: 185px; } .arrival-note strong { font-size: 16px; } .arrival-note p { font-size: 14px; } .arrival-note > a { margin-left: 0; width: 100%; justify-content: space-between; } .service-group { padding-block: 45px 40px; } .service-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 27px; } .service-card { min-height: 300px; padding: 27px; } .service-card h3 { font-size: 24px; } .service-card > p { font-size: 14px; } .service-card > a { font-size: 14px; } .specialties-section { grid-template-columns: 1fr; gap: 28px; padding-block: 40px 55px; } .specialties-section h2 { font-size: 36px; } .specialties-section > div > p:last-child { font-size: 14px; } .specialties-section li { padding-block: 20px; } }
+</style>

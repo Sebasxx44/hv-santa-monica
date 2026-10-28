@@ -1,0 +1,59 @@
+---
+import PageLayoutTA from "@/components/PageLayoutTA.astro";
+import ActionHeaderTA from "@/components/ActionHeaderTA.astro";
+import IconTA from "@/components/IconTA.astro";
+import ContactBandTA from "@/components/ContactBandTA.astro";
+import { hospital, publishedFigures, values } from "@/data/hospital";
+---
+<PageLayoutTA title="Sobre nosotros" description="Conoce la misión, visión y valores del Hospital Veterinario de Santa Mónica. Atención integral y cercana para las mascotas y sus familias en Dosquebradas, las 24 horas." active="sobre-nosotros">
+  <section class="about-intro section-shell"><div><ActionHeaderTA eyebrow="SOBRE NOSOTROS" title="Detrás de cada cuidado, un equipo." description="Nos une el bienestar de las mascotas y el compromiso de acompañar a las familias con profesionalismo, empatía y calidez." /><a href="/contactanos/" class="button button-primary">Conversemos <IconTA name="arrow" size={18} /></a><div class="about-presence"><IconTA name="clock" size={23} /><p>Presentes las 24 horas.<br /><span>Cerca de ti, en Dosquebradas.</span></p></div></div><figure class="about-hero-photo reveal"><img src="/images/equipo-hospital.webp" srcset="/images/equipo-hospital-480.webp 480w, /images/equipo-hospital-960.webp 960w, /images/equipo-hospital-1600.webp 1600w" sizes="(max-width:650px) 88vw, 43vw" width="960" height="720" alt="Equipo del Hospital Veterinario de Santa Mónica" fetchpriority="high" /><figcaption><IconTA name="paw" size={20} /><span>Profesionales. Personas. Un mismo compromiso.</span></figcaption></figure></section>
+  <section class="purpose-section section-shell" aria-label="Misión y visión"><article class="purpose-card reveal"><span class="purpose-icon"><IconTA name="heart" size={29} /></span><p class="eyebrow">NUESTRA MISIÓN</p><h2>Cuidar con conocimiento.<br /><span>Acompañar con calidez.</span></h2><p>{hospital.mission}</p></article><article class="purpose-card vision-card reveal"><span class="purpose-icon"><IconTA name="shield" size={29} /></span><p class="eyebrow">NUESTRA VISIÓN</p><h2>Crecer para seguir<br /><span>cuidando mejor.</span></h2><p>{hospital.vision}</p></article></section>
+  <section class="values-section section-shell"><ActionHeaderTA level="h2" eyebrow="LO QUE GUÍA NUESTRO TRABAJO" title="Valores que se sienten en la atención." description="Una forma de trabajar que pone a las mascotas y a sus familias en el centro." /><div class="values-grid">{values.map((value, index) => <article class="value-card reveal"><span>0{index + 1}</span><h3>{value.title}</h3><p>{value.description}</p></article>)}</div></section>
+  <section class="team-section section-shell"><div class="team-heading"><ActionHeaderTA level="h2" eyebrow="NUESTRO EQUIPO DE TRABAJO" title="Personas que trabajan por ellos." /><p>Profesionales que coordinan su trabajo y mantienen el compromiso con una atención integral, cercana y en constante actualización.</p></div><div class="team-photos"><figure class="reveal"><img src="/images/equipo-conversando.webp" srcset="/images/equipo-conversando-480.webp 480w, /images/equipo-conversando-960.webp 960w, /images/equipo-conversando-1600.webp 1600w" sizes="(max-width:650px) 88vw, 50vw" width="960" height="720" alt="Integrantes del hospital veterinario durante su trabajo" loading="lazy" decoding="async" /><figcaption>Trabajamos en equipo.</figcaption></figure><figure class="reveal"><img src="/images/equipo-con-perro.webp" srcset="/images/equipo-con-perro-480.webp 480w, /images/equipo-con-perro-960.webp 960w, /images/equipo-con-perro-1600.webp 1600w" sizes="(max-width:650px) 88vw, 40vw" width="960" height="720" alt="Integrante del equipo de Santa Mónica junto a una mascota" loading="lazy" decoding="async" /><figcaption>Cuidamos de cada encuentro.</figcaption></figure></div></section>
+  <section class="published-section section-shell" aria-labelledby="published-title"><div class="published-heading"><p class="eyebrow">INFORMACIÓN DEL HOSPITAL</p><h2 id="published-title">Así se presenta Santa Mónica.</h2></div><dl class="published-grid">{publishedFigures.map((figure) => <div class="published-item"><dt>{figure.label}</dt><dd>{figure.value}</dd></div>)}</dl><div class="published-source"><p>Cifras publicadas por el hospital en su sitio original.</p><a href="https://www.hvdesantamonica.com.co/" target="_blank" rel="noreferrer">Consultar la fuente original <IconTA name="arrow" size={16} /></a></div></section>
+  <ContactBandTA />
+</PageLayoutTA>
+<style>
+  .about-intro { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 8%; padding-block: 70px 75px; }
+  .about-intro > div > .button { font-size: 14px; margin-top: 27px; }
+  .about-presence { display: flex; align-items: center; gap: 13px; margin-top: 32px; color: #027b76; }
+  .about-presence p { font-size: 14px; line-height: 1.7; color: #2c3d49; }
+  .about-presence span { color: #5b7278; font-size: 13px; }
+  .about-hero-photo { height: 465px; position: relative; border-radius: 85px 24px 24px 24px; background: #e5f1ed; overflow: hidden; margin: 0; }
+  .about-hero-photo > img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .about-hero-photo:after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #063c3a8c); }
+  .about-hero-photo figcaption { position: absolute; left: 25px; right: 25px; bottom: 24px; display: flex; align-items: center; gap: 11px; color: #fff; font-size: 12px; line-height: 1.6; z-index: 1; }
+  .about-hero-photo figcaption svg { flex-shrink: 0; }
+  .purpose-section { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; padding-block: 45px 65px; }
+  .purpose-card { padding: 35px; border: 1px solid #dcece6; border-radius: 22px; background: #eef8f4; }
+  .vision-card { background: #f5f8f7; }
+  .purpose-icon { display: grid; place-items: center; background: #d9eee6; color: #027b76; width: 58px; height: 58px; border-radius: 17px; margin-bottom: 28px; }
+  .purpose-card h2 { color: #2c3d49; font-size: 30px; line-height: 1.22; font-weight: 500; letter-spacing: -.8px; margin: 19px 0 23px; }
+  .purpose-card h2 span { color: #027b76; }
+  .purpose-card > p:last-child { font-size: 15px; line-height: 1.9; color: #5b7278; }
+  .values-section { padding-block: 55px 65px; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 35px; margin-top: 38px; }
+  .value-card { padding: 25px 0 0; border-top: 1px solid #d8e6e0; }
+  .value-card > span { font-size: 12px; color: #027b76; }
+  .value-card h3 { margin: 22px 0 15px; color: #2c3d49; font-size: 23px; line-height: 1.3; font-weight: 500; letter-spacing: -.6px; }
+  .value-card p { font-size: 15px; color: #5c7379; line-height: 1.85; max-width: 330px; }
+  .team-section { padding-block: 55px 70px; }
+  .team-heading { display: grid; grid-template-columns: 1.3fr 1fr; align-items: end; gap: 10%; }
+  .team-heading > p { font-size: 15px; line-height: 1.85; color: #5b7278; max-width: 360px; margin-bottom: 7px; }
+  .team-photos { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; margin-top: 35px; }
+  .team-photos figure { margin: 0; position: relative; height: 345px; border-radius: 20px; overflow: hidden; background: #e7f0ec; }
+  .team-photos figure:after { content: ""; position: absolute; inset: 65% 0 0; background: linear-gradient(transparent, #0e393678); }
+  .team-photos img { width: 100%; height: 100%; object-fit: cover; }
+  .team-photos figcaption { color: #fff; position: absolute; bottom: 23px; left: 24px; right: 24px; font-size: 14px; z-index: 1; }
+  .published-section { padding-block: 45px 65px; border-top: 1px solid #dce8e2; }
+  .published-heading h2 { font-size: 30px; font-weight: 500; letter-spacing: -.8px; line-height: 1.3; margin-top: 19px; color: #2c3d49; }
+  .published-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 33px 0 27px; max-width: 660px; }
+  .published-item { display: flex; flex-direction: column-reverse; gap: 11px; border-top: 1px solid #dce8e2; padding-top: 23px; }
+  .published-item dt { font-size: 14px; line-height: 1.7; color: #5b7278; }
+  .published-item dd { font-size: 54px; line-height: 1; font-weight: 500; letter-spacing: -2px; color: #027b76; margin: 0; }
+  .published-source { display: flex; justify-content: space-between; align-items: start; gap: 35px; }
+  .published-source p { font-size: 12px; line-height: 1.85; color: #5b7278; max-width: 580px; }
+  .published-source a { font-size: 12px; line-height: 1.8; display: inline-flex; gap: 10px; align-items: center; color: #027b76; text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 950px) { .about-intro { gap: 6%; } .about-hero-photo { height: 430px; } .purpose-section { gap: 21px; } .purpose-card { padding: 29px; } .purpose-card h2 { font-size: 26px; } .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; } .team-heading { gap: 6%; } .team-photos { gap: 20px; } .team-photos figure { height: 315px; } }
+  @media (max-width: 650px) { .about-intro { grid-template-columns: 1fr; gap: 34px; padding-block: 42px 50px; } .about-hero-photo { height: 380px; border-top-left-radius: 70px; } .about-hero-photo figcaption { left: 23px; right: 23px; font-size: 12px; } .purpose-section { grid-template-columns: 1fr; gap: 20px; padding-block: 35px 45px; } .purpose-card { padding: 29px 25px; } .purpose-card h2 { font-size: 28px; } .purpose-card > p:last-child { font-size: 14px; } .values-section { padding-block: 40px 45px; } .values-grid { grid-template-columns: 1fr; gap: 28px; margin-top: 29px; } .value-card h3 { font-size: 25px; margin-top: 19px; } .value-card p { font-size: 14px; max-width: none; } .team-section { padding-block: 40px 50px; } .team-heading { grid-template-columns: 1fr; gap: 21px; } .team-heading > p { font-size: 14px; max-width: none; } .team-photos { grid-template-columns: 1fr; gap: 20px; margin-top: 28px; } .team-photos figure { height: 300px; } .team-photos figcaption { font-size: 13px; } .published-section { padding-block: 35px 50px; } .published-heading h2 { font-size: 28px; } .published-grid { margin-top: 27px; gap: 22px; } .published-item dd { font-size: 48px; } .published-source { flex-direction: column; gap: 16px; } }
+</style>
