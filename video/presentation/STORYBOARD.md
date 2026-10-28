@@ -1,5 +1,5 @@
-14 segundos · 1920×1080 · 30 fps · sin audio para reproducción al entrar.
+Tutorial de uso · 20s · 1920×1080 · 30fps · silencioso.
 
-0–2,8: vínculo y gato original. 2,8–5,8: inicio real y cursor hacia servicios. 5,8–8,8: galería y servicios reales. 8,8–11,2: equipo original. 11,2–14: marca, ubicación y llamada a conocer el hospital.
+0–4: abrir servicios desde el inicio restaurado. 4–9: buscar ecografía y consultar ese servicio. 9–14: completar un formulario real con datos de ejemplo. 14–20: revisar y localizar Continuar en WhatsApp. No se pulsa ese enlace ni se envían mensajes.
 
-Fotos, marca y fuentes locales; sin pantallas inventadas ni imágenes generadas.
+Capturas de la app local; interfaz y textos reales. La guía se abre por un botón, nunca al entrar.
